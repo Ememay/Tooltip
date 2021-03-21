@@ -1,0 +1,53 @@
+body {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+
+p {
+    line-height: 30px;
+}
+
+.spex-text {
+    color: brown;
+    font-weight: bold;
+    position: relative;
+}
+
+.spex-text::before {
+    content: attr(data-text);
+    background-color: rgba(255, 250, 250, 0.932);
+    border: 1px solid #eee;
+    width: 300%;
+    height: 300%;
+    padding: 3px 10px;
+    position: absolute;
+    top: -350%;
+    left: -100%;
+    display: none;
+    font-size: 15px;
+}
+
+.showspectext::before {
+    display: block !important;
+}
+
+@media screen and (max-width:600px) {
+    .spex-text::before {
+        left: 0% !important;
+    }
+    body {
+        width: 90%;
+    }
+    .spex-text::before {
+        content: attr(data-text);
+        background-color: rgba(255, 250, 250, 0.932);
+        border: 1px solid #eee;
+        height: 0%;
+        position: unset !important;
+        padding: 3px 10px;
+        display: none;
+        font-size: 15px;
+        width: 90%;
+    }
+}
